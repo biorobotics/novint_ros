@@ -1,0 +1,3 @@
+[submodule "extern/libnifalcon"]
+	path = extern/libnifalcon
+	url = https://github.com/libnifalcon/libnifalcon.git
