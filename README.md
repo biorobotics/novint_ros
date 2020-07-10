@@ -1,6 +1,14 @@
+# Novint Falcon Ros Driver
+
+A small driver wrapping the lovely libnifalcon for use with ROS.
+
 Plug in power and USB
+Make a catkin workspace
+clone this repo into the source directory
 ```
-cd PATH_TO_WS/src/novint_ros/extern/libnifalcon
+cd $PATH_TO_WS/src/novint_ros
+git submodule update --init --recursive
+cd extern/libnifalcon
 mkdir build
 cd build
 cmake -G "Unix Makefiles" ..
