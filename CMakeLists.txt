@@ -155,7 +155,8 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(${PROJECT_NAME}_wall_test src/FalconTestBase.cpp src/FalconWallTest.cpp)
+add_executable(falcon_ros_node src/falcon_ros_node.cpp)
+
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -165,16 +166,10 @@ add_executable(${PROJECT_NAME}_wall_test src/FalconTestBase.cpp src/FalconWallTe
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-add_dependencies(${PROJECT_NAME}_wall_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(falcon_ros_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-link_directories(/usr/local/lib)
-target_link_libraries(${PROJECT_NAME}_wall_test
-  ${catkin_LIBRARIES}  /usr/lib/x86_64-linux-gnu/libusb-1.0.so /usr/local/lib/libnifalcon.so.1.0.2 /usr/local/lib/libnifalcon_cli_base.so.1.0.2
-)
-
-add_executable(falcon_ros_node src/falcon_ros_node.cpp)
-add_dependencies(falcon_ros_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# link_directories(/usr/local/lib)
 link_directories(/usr/local/lib)
 target_link_libraries(falcon_ros_node
   ${catkin_LIBRARIES}  /usr/lib/x86_64-linux-gnu/libusb-1.0.so /usr/local/lib/libnifalcon.so.1.0.2 /usr/local/lib/libnifalcon_cli_base.so.1.0.2
