@@ -8,6 +8,7 @@
 
 // TODO:
 // Figure out how argc / argv work
+// Should maybe switch to ftp://www.h3dapi.org/pub/releases/source/h3dapi-2.2.0.tar.gz
 
 bool stop = false;
 
@@ -60,6 +61,7 @@ void FalconROS::run()
 		std::array<double, 3> pos = m_falconDevice->getPosition();
 		geometry_msgs::PoseStamped pos_msg;
 		pos_msg.header.stamp = t;
+		pos_msg.header.frame_id= "falcon";
 		pos_msg.pose.position.x = pos[0];
 		pos_msg.pose.position.y = pos[1];
 		pos_msg.pose.position.z = pos[2];
