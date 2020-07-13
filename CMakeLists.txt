@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0.2)
 project(novint_ros)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -18,9 +18,9 @@ find_package(catkin REQUIRED COMPONENTS
 # add_subdirectory(libnifalcon)
 # find_package(PkgConfig REQUIRED)
 
-find_package(PkgConfig REQUIRED)
-pkg_search_module(NIFALCON REQUIRED IMPORTED_TARGET libnifalcon)
-pkg_check_modules(NIFALCON REQUIRED libnifalcon)
+# find_package(PkgConfig REQUIRED)
+# pkg_search_module(NIFALCON REQUIRED IMPORTED_TARGET libnifalcon)
+# pkg_check_modules(NIFALCON REQUIRED libnifalcon)
 
 # include(${CMAKE_ROOT}/Modules/ExternalProject.cmake)
 # ExternalProject_Add(project_libnifalcon
@@ -170,7 +170,7 @@ add_dependencies(falcon_ros_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EX
 
 ## Specify libraries to link a library or executable target against
 # link_directories(/usr/local/lib)
-link_directories(/usr/local/lib)
+# link_directories(/usr/local/lib)
 target_link_libraries(falcon_ros_node
   ${catkin_LIBRARIES}  /usr/lib/x86_64-linux-gnu/libusb-1.0.so /usr/local/lib/libnifalcon.so.1.0.2 /usr/local/lib/libnifalcon_cli_base.so.1.0.2
 )

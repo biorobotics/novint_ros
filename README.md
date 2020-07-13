@@ -26,3 +26,6 @@ You may have to run this twice. You should see the LED change and encoder feedba
 
 If the arm won't calibrate, there may be something wrong with the wall power. Check the Falcon is plugged in correctly.
 
+You may have to add the folloing to your `.bashrc` file:
+`export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}`
+
